@@ -1,0 +1,21 @@
+
+
+gul_r = 191
+gul_g = 365
+gul_b = 187
+
+grøn_r = 154
+grøn_g = 330
+grøn_b = 177
+
+lilla_r = 152
+lilla_g = 286
+lilla_b = 173
+
+orange_r = 172
+orange_g = 296
+orange_b = 175
+
+rød_r = 161
+rød_g = 285
+rød_b = 171
