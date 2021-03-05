@@ -76,14 +76,12 @@ void Servo::move(int speed, int position) {
   get_direction();
                          
   if (direction == 1){
-    //analogWrite(speed, control_pin_a);                                       // skriv analogWrite til controlPinA med move_speed
-    digitalWrite(control_pin_a, 1);
-    digitalWrite(control_pin_b, 0);
+    analogWrite(control_pin_a, speed);
+    analogWrite(control_pin_b, 0);
     while(control_pin_a) {}; 
   } else {
-    //analogWrite(speed, control_pin_b);                                       // skriv analogWrite til controlPinB med move_speed
-    digitalWrite(control_pin_a, 0);
-    digitalWrite(control_pin_b, 1);
+    analogWrite(control_pin_a, 0);
+    analogWrite(control_pin_b, speed);
     while(control_pin_b) {}; 
   }
 }

@@ -42,7 +42,7 @@ void hall_sense() {
 void setup() {
 
   // Servo Motor
-  attachInterrupt(digitalPinToInterrupt(A5), hall_sense, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(SERVO_TACHO_PIN), hall_sense, CHANGE);
 
   // Stepper Motor
   Stepper_motor.setSpeed(120);
@@ -55,26 +55,30 @@ void setup() {
 }
 
 void loop() {
-  /*
   delay(1000);
 
   Stepper_motor.step(STEPPER_STEPS_PER_REVOLUTION/4);
+  
+  String color = Color_sensor.get_color()
 
+  if(color == "Yellow") {
+    Servo_motor.move(255, 1)
+  }
+  if(color == "Green") {
+    Servo_motor.move(255, 2)
+  }
+  if(color == "Purple") {
+    Servo_motor.move(255, 3)
+  }
+  if(color == "Orange") {
+    Servo_motor.move(255, 4)
+  }
+  if(color == "Red") {
+    Servo_motor.move(255, 5)
+  }
+
+  Stepper_motor.step(STEPPER_STEPS_PER_REVOLUTION/4);
+  
+  esp8266.println(color);
   delay(1000);
-  
-  Color_sensor.meassure();
-  Serial.println(Color_sensor.get_r_value());
-  Serial.println(Color_sensor.get_g_value());
-  Serial.println(Color_sensor.get_b_value());
-  Serial.println("");
-  
-  delay(1000);
-
-  Servo_motor.move(2)
-  */
-
-  Serial.println(Color_sensor.get_color());
-  
-  esp8266.println("Hell YEAH niigger");
-  delay(2000);
 }
